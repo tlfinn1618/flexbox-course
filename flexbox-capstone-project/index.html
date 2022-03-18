@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My NavBar</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/748d6eaab5.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        /* Colors: Dark: 03045E 2: 023E8A 3: 0077B6 Light: EDFAFD */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Overpass', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            width: 100vw;
+            background-color: #03045e;
+            color: #edfafd;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .menu {
+                width: 50px
+            }
+            
+            .menu-btn {
+                display: block;
+                padding: 0px 10px;
+            }
+
+            .menu-btn a {
+                color: #edfafd;
+                text-decoration: none;
+            }
+
+            .menu-btn a:hover {
+                color: #0077B6;
+                text-decoration: none;
+            }
+
+            .navbar .brand {
+                order: 2;
+                width: 100vw;
+            }
+
+            .navbar .brand a {
+                color: #edfafd;
+                text-decoration: none;
+                padding: 5px 15px;
+            }
+            
+            .navbar .brand a:hover {
+                color: #03045e;
+                background-color: #0077B6;
+            }
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="navbar">
+            <div class="brand">
+                <a href="">Thomas Finn</a>    
+            </div>
+            <div class="menu">
+                <div class="menu-btn">
+                    <a href=""><i class="fa-solid fa-bars"></i></a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
