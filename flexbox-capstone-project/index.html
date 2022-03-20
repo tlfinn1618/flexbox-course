@@ -4,98 +4,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My NavBar</title>
+    <title>Document</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&family=Oxygen&display=swap" rel="stylesheet">
+    
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/748d6eaab5.js" crossorigin="anonymous"></script>
 
     <style>
-
-        /* Colors: Dark: 03045E 2: 023E8A 3: 0077B6 Light: EDFAFD */
-
+        html {
+            font-family: 'Oxygen', sans-serif;
+        }
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Overpass', sans-serif;
+            margin: 0px;
         }
-
-        .container {
-            display: flex;
-            height: 100vh;
-            width: 100vw;
-        }
-
         .navbar {
-            display: flex;
-            align-items: center;
-            height: 40px;
-            width: 100vw;
-            background-color: #03045e;
-            color: #edfafd;
+            background: #415068;
         }
-
-        @media only screen and (max-width: 600px) {
-            .menu {
-                width: 50px
+        .navbar div {
+            display: none;
+        }
+        .navbar .toggle,
+        .navbar .brand {
+            display: inline-block;
+        }
+        .navbar .link {
+            display: block;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: #223047;
+            color: white;
+        }
+        .navbar .link:hover,
+        .navbar .link:active {
+            color: #223047;
+            background: white;
+        }
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            color: white;
+        }
+        .navbar a {
+            text-decoration: none;
+        }
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+        }
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
             }
-            
-            .menu-btn {
-                display: block;
-                padding: 0px 10px;
+            .navbar .left,
+            .navbar .right {
+                display: flex;
+                flex: 1;
             }
-
-            .menu-btn a {
-                color: #edfafd;
-                text-decoration: none;
+            .navbar .link {
+                width: auto;
             }
-
-            .menu-btn a:hover {
-                color: #0077B6;
-                text-decoration: none;
+            .navbar .right {
+                justify-content: flex-end;
             }
-
+            .navbar .toggle {
+                display: none;
+            }
+        }
+        @media (min-width: 48em) {
+            .navbar div {
+                display: flex;
+            }
+        }
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: #223047;
+                color: white;
+            }
             .navbar .brand {
-                order: 2;
-                width: 100vw;
+                text-align: left;
             }
-
-            .navbar .brand a {
-                color: #edfafd;
-                text-decoration: none;
-                padding: 5px 15px;
-            }
-            
-            .navbar .brand a:hover {
-                color: #03045e;
-                background-color: #0077B6;
+            .navbar.active div {
+                display: block;
             }
         }
-
     </style>
-
 
 </head>
 <body>
-
-    <div class="container">
-
-        <div class="navbar">
-            <div class="brand">
-                <a href="">Thomas Finn</a>    
-            </div>
-            <div class="menu">
-                <div class="menu-btn">
-                    <a href=""><i class="fa-solid fa-bars"></i></a>
-                </div>
-                
-            </div>
+    <div class="navbar">
+        <a href="#" class="toggle" id="navHamburger">
+            <i class="fas fa-bars"></i>
+        </a>
+        <a href="#" class="brand">MyName</a>
+        <div class="left">
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
         </div>
-
+        <div class="right">
+            <a href="#" class="link">Link 3</a>
+        </div>
     </div>
 </body>
+
+<script>
+    const navHamburger = document.querySelector('#navHamburger');
+    navHamburger.addEventListener('click', (e) => {
+        navHamburger.parentElement.classList.toggle('active');
+    })
+</script>
+
+
 </html>

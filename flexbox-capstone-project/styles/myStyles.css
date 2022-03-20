@@ -1,0 +1,26 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100vw;
+    margin: 0px;
+    background-color: #03045E;
+}
+
+.menu-items {
+    color: #CAF0F8;
+}
+
+@media only screen and (max-width: 600px) {
+
+}
